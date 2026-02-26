@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import { Bot, User, Copy, Check } from 'lucide-react';
+import { Sparkles, User, Copy, Check } from 'lucide-react';
 import { formatFullTime } from '../../utils/session';
 
 const MessageItem = ({ message, isStreaming = false }) => {
@@ -22,7 +22,7 @@ const MessageItem = ({ message, isStreaming = false }) => {
         <div className={`message-row ${isUser ? 'user' : 'assistant'}`}>
             {/* Avatar */}
             <div className={`message-avatar ${isUser ? 'user-avatar' : 'assistant-avatar'}`}>
-                {isUser ? <User size={16} color="white" /> : <Bot size={16} color="#8b5cf6" />}
+                {isUser ? <User size={16} color="white" /> : <Sparkles size={16} color="#8b5cf6" />}
             </div>
 
             {/* Bubble */}
