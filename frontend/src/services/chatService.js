@@ -3,9 +3,9 @@
  */
 import axiosClient from '../api/axiosClient';
 
-const API_BASE = import.meta.env.VITE_API_R_URL;
+const API_BASE = import.meta.env.VITE_API_R_URL || '';
 
-/** Send a chat message (streaming SSE) */
+/* Send a chat message (streaming SSE) */
 export async function sendMessageStream(sessionId, message) {
     const res = await fetch(`${API_BASE}/api/chat/stream`, {
         method: 'POST',
@@ -21,7 +21,7 @@ export async function sendMessageStream(sessionId, message) {
     return res;
 }
 
-/** Send a chat message (non-streaming) */
+/* Send a chat message (non-streaming) */
 export async function sendMessage(sessionId, message) {
     try {
         const res = await axiosClient.post('/api/chat', { sessionId, message });
