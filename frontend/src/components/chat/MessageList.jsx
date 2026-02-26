@@ -17,12 +17,12 @@ const MessageList = ({ messages, isLoading, streamingMessage, statusStages }) =>
                 <MessageItem key={msg.id} message={msg} />
             ))}
 
-            {/* Status stages */}
+            {}
             {statusStages.length > 0 && (
                 <StatusIndicator stages={statusStages} />
             )}
 
-            {/* Streaming message being received */}
+            {}
             {streamingMessage && (
                 <MessageItem
                     message={{
@@ -35,7 +35,7 @@ const MessageList = ({ messages, isLoading, streamingMessage, statusStages }) =>
                 />
             )}
 
-            {/* Typing indicator */}
+            {}
             {isLoading && !streamingMessage && statusStages.length === 0 && (
                 <TypingIndicator />
             )}
@@ -46,3 +46,4 @@ const MessageList = ({ messages, isLoading, streamingMessage, statusStages }) =>
 };
 
 export default MessageList;
+

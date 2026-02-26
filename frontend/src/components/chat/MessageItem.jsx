@@ -20,12 +20,12 @@ const MessageItem = ({ message, isStreaming = false }) => {
 
     return (
         <div className={`message-row ${isUser ? 'user' : 'assistant'}`}>
-            {/* Avatar */}
+            {}
             <div className={`message-avatar ${isUser ? 'user-avatar' : 'assistant-avatar'}`}>
                 {isUser ? <User size={16} color="white" /> : <Sparkles size={16} color="#8b5cf6" />}
             </div>
 
-            {/* Bubble */}
+            {}
             <div>
                 <div className={`message-bubble ${isUser ? 'user-bubble' : 'assistant-bubble'}`}>
                     {isUser ? (
@@ -36,7 +36,7 @@ const MessageItem = ({ message, isStreaming = false }) => {
                                 {message.content}
                             </ReactMarkdown>
 
-                            {/* Copy button (assistant only) */}
+                            {}
                             {!isStreaming && (
                                 <button className="copy-btn" onClick={handleCopy}>
                                     {copied ? <Check size={12} /> : <Copy size={12} />}
@@ -47,7 +47,7 @@ const MessageItem = ({ message, isStreaming = false }) => {
                     )}
                 </div>
 
-                {/* Timestamp */}
+                {}
                 <div className="message-timestamp">
                     {formatFullTime(message.created_at)}
                     {isStreaming && ' • typing...'}
@@ -58,3 +58,4 @@ const MessageItem = ({ message, isStreaming = false }) => {
 };
 
 export default MessageItem;
+

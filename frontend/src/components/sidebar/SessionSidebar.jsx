@@ -4,7 +4,7 @@ import { formatTime } from '../../utils/session';
 const SessionSidebar = ({ sessions, currentSessionId, onNewChat, onSelectSession, onDeleteSession, onClose }) => {
     return (
         <aside className="sidebar">
-            {/* Brand Header */}
+            {}
             <div className="sidebar-header">
                 <div className="sidebar-brand">
                     <div className="sidebar-brand-icon">
@@ -17,13 +17,13 @@ const SessionSidebar = ({ sessions, currentSessionId, onNewChat, onSelectSession
                 </button>
             </div>
 
-            {/* New Chat Button */}
+            {}
             <button className="new-chat-btn" onClick={onNewChat} id="new-chat-button">
                 <Plus size={16} />
                 New Chat
             </button>
 
-            {/* Session List */}
+            {}
             <div className="session-list">
                 {sessions.length === 0 ? (
                     <div style={{
@@ -69,3 +69,4 @@ const SessionSidebar = ({ sessions, currentSessionId, onNewChat, onSelectSession
 };
 
 export default SessionSidebar;
+

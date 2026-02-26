@@ -21,3 +21,4 @@ async def rate_limit_handler(request: Request, exc: RateLimitExceeded):
             "detail": str(exc.detail),
         },
     )
+

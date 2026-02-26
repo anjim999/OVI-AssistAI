@@ -12,3 +12,4 @@ const StatusIndicator = ({ stages }) => {
 };
 
 export default StatusIndicator;
+

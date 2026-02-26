@@ -167,3 +167,4 @@ class ChatService:
 
 # Singleton instance
 chat_service = ChatService()
+

@@ -66,3 +66,4 @@ const MessageInput = ({ onSend, isLoading }) => {
 };
 
 export default MessageInput;
+

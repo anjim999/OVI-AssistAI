@@ -1,10 +1,8 @@
-/**
- * Session utilities — UUID generation and localStorage management.
- */
+
 
 const SESSION_KEY = 'rag_session_id';
 
-/** Generate a UUID v4 */
+
 function generateUUID() {
     return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
         const r = (Math.random() * 16) | 0;
@@ -13,7 +11,7 @@ function generateUUID() {
     });
 }
 
-/** Get existing sessionId or create a new one */
+
 export function getSessionId() {
     let id = localStorage.getItem(SESSION_KEY);
     if (!id) {
@@ -23,19 +21,19 @@ export function getSessionId() {
     return id;
 }
 
-/** Store a sessionId */
+
 export function setSessionId(id) {
     localStorage.setItem(SESSION_KEY, id);
 }
 
-/** Create a new session — generates UUID and stores it */
+
 export function createNewSession() {
     const id = generateUUID();
     localStorage.setItem(SESSION_KEY, id);
     return id;
 }
 
-/** Helper to parse SQLite UTC timestamps safely to Local Time */
+
 function parseUTCDate(isoString) {
     if (!isoString) return new Date();
     // SQLite returns "YYYY-MM-DD HH:MM:SS" without timezone.
@@ -49,7 +47,7 @@ function parseUTCDate(isoString) {
     return new Date(safeString);
 }
 
-/** Format a timestamp for display in sidebar (Real Time) */
+
 export function formatTime(isoString) {
     if (!isoString) return '';
     try {
@@ -64,7 +62,7 @@ export function formatTime(isoString) {
     }
 }
 
-/** Format a full timestamp */
+
 export function formatFullTime(isoString) {
     if (!isoString) return '';
     try {
@@ -78,3 +76,4 @@ export function formatFullTime(isoString) {
         return '';
     }
 }
+

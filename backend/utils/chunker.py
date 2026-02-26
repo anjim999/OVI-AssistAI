@@ -90,3 +90,4 @@ def chunk_all_documents(documents: list[dict], chunk_size: int = 300, overlap: i
 
     print(f"📄 Chunked {len(documents)} documents into {len(all_chunks)} chunks")
     return all_chunks
+

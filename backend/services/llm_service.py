@@ -138,3 +138,4 @@ Remember: ONLY use the Product Documentation above. If the answer is not in the 
 
 # Singleton instance
 llm_service = LLMService()
+

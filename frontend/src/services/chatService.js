@@ -1,11 +1,9 @@
-/**
- * Chat Service — all API calls to the FastAPI backend.
- */
+
 import axiosClient from '../api/axiosClient';
 
 const API_BASE = import.meta.env.VITE_API_R_URL || '';
 
-/* Send a chat message (streaming SSE) */
+
 export async function sendMessageStream(sessionId, message) {
     const res = await fetch(`${API_BASE}/api/chat/stream`, {
         method: 'POST',
@@ -21,7 +19,7 @@ export async function sendMessageStream(sessionId, message) {
     return res;
 }
 
-/* Send a chat message (non-streaming) */
+
 export async function sendMessage(sessionId, message) {
     try {
         const res = await axiosClient.post('/api/chat', { sessionId, message });
@@ -31,7 +29,7 @@ export async function sendMessage(sessionId, message) {
     }
 }
 
-/** Get conversation messages for a session */
+
 export async function getConversation(sessionId) {
     try {
         const res = await axiosClient.get(`/api/conversations/${sessionId}`);
@@ -42,7 +40,7 @@ export async function getConversation(sessionId) {
     }
 }
 
-/** Get all sessions */
+
 export async function getSessions() {
     try {
         const res = await axiosClient.get('/api/sessions');
@@ -52,7 +50,7 @@ export async function getSessions() {
     }
 }
 
-/** Delete a session */
+
 export async function deleteSession(sessionId) {
     try {
         const res = await axiosClient.delete(`/api/sessions/${sessionId}`);
@@ -62,7 +60,7 @@ export async function deleteSession(sessionId) {
     }
 }
 
-/** Clear all messages from a session */
+
 export async function clearConversation(sessionId) {
     try {
         const res = await axiosClient.delete(`/api/conversations/${sessionId}`);
@@ -71,3 +69,5 @@ export async function clearConversation(sessionId) {
         throw new Error('Failed to clear conversation');
     }
 }
+
+

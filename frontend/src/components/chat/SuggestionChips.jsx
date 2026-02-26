@@ -32,3 +32,4 @@ const SuggestionChips = ({ onSelect }) => {
 };
 
 export default SuggestionChips;
+

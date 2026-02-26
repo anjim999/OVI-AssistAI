@@ -121,3 +121,4 @@ def clear_messages(session_id: str) -> None:
         (session_id,)
     )
     db.commit()
+

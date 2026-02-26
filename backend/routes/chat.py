@@ -124,3 +124,4 @@ async def clear_conversation(session_id: str):
     if not cleared:
         raise HTTPException(status_code=404, detail="Session not found")
     return {"success": True, "message": "Conversation cleared successfully"}
+

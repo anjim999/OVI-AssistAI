@@ -57,3 +57,4 @@ def close_db():
         _connection.close()
         _connection = None
         print("🔒 Database connection closed")
+

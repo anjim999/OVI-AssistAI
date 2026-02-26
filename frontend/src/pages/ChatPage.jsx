@@ -218,7 +218,7 @@ const ChatPage = () => {
 
     return (
         <div style={{ height: '100vh', display: 'flex', overflow: 'hidden' }}>
-            {/* Sidebar */}
+            {}
             {sidebarOpen && (
                 <>
                     <SessionSidebar
@@ -237,7 +237,7 @@ const ChatPage = () => {
                 </>
             )}
 
-            {/* Main Chat Area */}
+            {}
             <main
                 style={{
                     flex: 1,
@@ -258,7 +258,7 @@ const ChatPage = () => {
                     hasMessages={messages.length > 0}
                 />
 
-                {/* Empty State or Messages */}
+                {}
                 {messages.length === 0 && !isLoading ? (
                     <div className="empty-state">
                         <div className="empty-icon">
@@ -290,3 +290,4 @@ const ChatPage = () => {
 };
 
 export default ChatPage;
+

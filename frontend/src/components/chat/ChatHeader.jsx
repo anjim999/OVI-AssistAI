@@ -48,7 +48,7 @@ const ChatHeader = ({ title, sidebarOpen, onToggleSidebar, onClearChat, onDelete
                 </div>
             </header>
 
-            {/* Confirmation Modal */}
+            {}
             {showModal && (
                 <div className="modal-overlay" onClick={() => setShowModal(null)}>
                     <div className="modal-content" onClick={(e) => e.stopPropagation()}>
@@ -76,3 +76,4 @@ const ChatHeader = ({ title, sidebarOpen, onToggleSidebar, onClearChat, onDelete
 };
 
 export default ChatHeader;
+

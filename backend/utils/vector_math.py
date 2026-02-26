@@ -68,3 +68,4 @@ def find_top_k_similar(
     relevant.sort(key=lambda x: x["score"], reverse=True)
 
     return relevant[:top_k]
+
