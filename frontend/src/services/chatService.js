@@ -1,7 +1,7 @@
 
 import axiosClient from '../api/axiosClient';
 
-const API_BASE = import.meta.env.VITE_API_R_URL || '';
+const API_BASE = import.meta.env.VITE_API_URL;
 
 
 export async function sendMessageStream(sessionId, message) {

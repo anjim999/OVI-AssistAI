@@ -4,7 +4,7 @@ Database Query Functions — all SQL operations for sessions and messages.
 from db.database import get_db
 
 
-# ─── Session Queries ──────────────────────────────────────────────
+# Session Queries
 
 def create_session(session_id: str) -> None:
     """Create a new session if it doesn't exist."""
@@ -70,7 +70,7 @@ def delete_session(session_id: str) -> None:
     db.commit()
 
 
-# ─── Message Queries ──────────────────────────────────────────────
+# Message Queries
 
 def insert_message(session_id: str, role: str, content: str, tokens_used: int = 0) -> None:
     """Insert a new message and update session timestamp."""

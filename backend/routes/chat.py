@@ -10,7 +10,7 @@ from services.chat_service import chat_service
 router = APIRouter()
 
 
-# ─── Request / Response Models ────────────────────────────────────
+# Request / Response Models
 
 class ChatRequest(BaseModel):
     sessionId: str
@@ -33,7 +33,7 @@ class ChatRequest(BaseModel):
         return v.strip()
 
 
-# ─── POST /api/chat — Non-streaming ──────────────────────────────
+# POST /api/chat — Non-streaming
 
 @router.post("/chat")
 async def send_message(body: ChatRequest):
@@ -51,7 +51,7 @@ async def send_message(body: ChatRequest):
         raise HTTPException(status_code=500, detail=str(e))
 
 
-# ─── POST /api/chat/stream — Streaming SSE ───────────────────────
+# POST /api/chat/stream — Streaming SSE
 
 @router.post("/chat/stream")
 async def send_message_stream(body: ChatRequest):
@@ -79,7 +79,7 @@ async def send_message_stream(body: ChatRequest):
     )
 
 
-# ─── GET /api/conversations/:sessionId — Get conversation ────────
+# GET /api/conversations/:sessionId — Get conversation
 
 @router.get("/conversations/{session_id}")
 async def get_conversation(session_id: str):
@@ -95,7 +95,7 @@ async def get_conversation(session_id: str):
     }
 
 
-# ─── GET /api/sessions — List all sessions ───────────────────────
+# ─── GET /api/sessions — List all sessions 
 
 @router.get("/sessions")
 async def get_sessions():
@@ -104,7 +104,7 @@ async def get_sessions():
     return {"success": True, "sessions": sessions}
 
 
-# ─── DELETE /api/sessions/:sessionId — Delete session ─────────────
+# DELETE /api/sessions/:sessionId — Delete session
 
 @router.delete("/sessions/{session_id}")
 async def delete_session(session_id: str):
@@ -115,7 +115,7 @@ async def delete_session(session_id: str):
     return {"success": True, "message": "Session deleted successfully"}
 
 
-# ─── DELETE /api/conversations/:sessionId — Clear conversation ────
+# DELETE /api/conversations/:sessionId — Clear conversation
 
 @router.delete("/conversations/{session_id}")
 async def clear_conversation(session_id: str):
